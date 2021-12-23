@@ -6,7 +6,9 @@ import androidx.activity.result.ActivityResult;
 
 public abstract class ButtonInterface {
 
-  public static final long VERSION = 5;
+  public static final String VERSION = BuildConfig.API_VERSION;
+  public static final String METADATA_API_VERSION = "org.eu.thedoc.zettelnotes.interfaces.version";
+
   public static final String INTENT_ACTION = "org.eu.thedoc.zettelnotes.intent.buttons";
 
   protected Callback mCallback;

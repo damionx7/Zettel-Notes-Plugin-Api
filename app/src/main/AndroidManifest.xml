@@ -1,4 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-<manifest package="org.eu.thedoc.zettelnotes.interfaces">
+<manifest
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    package="org.eu.thedoc.zettelnotes.interfaces">
+
+    <application>
+        <meta-data android:name="org.eu.thedoc.zettelnotes.interfaces.version" android:value="@string/api_version" />
+    </application>
 
 </manifest>
