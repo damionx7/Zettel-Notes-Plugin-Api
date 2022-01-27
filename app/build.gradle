@@ -3,15 +3,15 @@ plugins {
     id 'maven-publish'
 }
 
-def apiVersion = "6"
-def appVersion = 3
+def apiVersion = "7"
+def appVersion = 4
 
 android {
-    compileSdk 30
+    compileSdk 31
 
     defaultConfig {
         minSdk 21
-        targetSdk 30
+        targetSdk 31
         versionCode appVersion
         versionName "${appVersion}"
         resValue "string", "api_version", apiVersion
@@ -40,7 +40,7 @@ android {
 }
 
 dependencies {
-    api 'androidx.appcompat:appcompat:1.3.1'
+    api 'androidx.appcompat:appcompat:1.4.1'
 }
 
 afterEvaluate {
@@ -51,7 +51,7 @@ afterEvaluate {
 
                 groupId = 'com.github.damionx7'
                 artifactId = 'Zettel-Notes-Plugin-Api'
-                version = '1.0.3'
+                version = '1.0.4'
             }
         }
     }

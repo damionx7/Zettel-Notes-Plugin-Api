@@ -24,7 +24,6 @@ public abstract class ButtonInterface {
   public interface Listener {
     void onClick ();
     boolean onLongClick ();
-    ActivityResultListener getActivityResultListener ();
   }
 
   public interface ActivityResultListener {
@@ -33,7 +32,6 @@ public abstract class ButtonInterface {
 
   public interface Callback {
     void startActivityForResult (Intent intent);
-    ActivityResultListener getActivityResultListener ();
     void setActivityResultListener (ActivityResultListener result);
     void insertText (String text);
     void replaceTextSelected (String text);
