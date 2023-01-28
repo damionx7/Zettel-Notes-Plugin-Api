@@ -4,18 +4,18 @@ plugins {
 }
 
 def apiVersion = "7"
-def appVersion = 4
+def appVersion = 5
 
 android {
-    compileSdk 31
+    compileSdk 32
 
     defaultConfig {
         minSdk 21
-        targetSdk 31
+        targetSdk 32
         versionCode appVersion
         versionName "${appVersion}"
         resValue "string", "api_version", apiVersion
-        buildConfigField "String", "API_VERSION", "\"$apiVersion\""
+        buildConfigField("String","API_VERSION","\"${apiVersion}\"")
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
         consumerProguardFiles "consumer-rules.pro"
@@ -40,7 +40,7 @@ android {
 }
 
 dependencies {
-    api 'androidx.appcompat:appcompat:1.4.1'
+    api 'androidx.appcompat:appcompat:1.6.0'
 }
 
 afterEvaluate {
@@ -51,7 +51,7 @@ afterEvaluate {
 
                 groupId = 'com.github.damionx7'
                 artifactId = 'Zettel-Notes-Plugin-Api'
-                version = '1.0.4'
+                version = '1.0.5'
             }
         }
     }
