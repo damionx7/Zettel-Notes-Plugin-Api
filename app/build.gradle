@@ -3,22 +3,21 @@ plugins {
     id 'maven-publish'
 }
 
-def apiVersion = "7"
-def appVersion = 5
+def appVersion = 7
 
 android {
-    compileSdk 32
+    namespace "org.eu.thedoc.zettelnotes.interfaces"
+    compileSdk 33
 
     defaultConfig {
         minSdk 21
-        targetSdk 32
+        targetSdk 33
         versionCode appVersion
         versionName "${appVersion}"
-        resValue "string", "api_version", apiVersion
-        buildConfigField("String","API_VERSION","\"${apiVersion}\"")
+        resValue "string", "api_version", "\"${appVersion}\""
+        buildConfigField("String", "API_VERSION", "\"${appVersion}\"")
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
-        consumerProguardFiles "consumer-rules.pro"
     }
 
     buildTypes {
@@ -31,27 +30,38 @@ android {
             minifyEnabled false
             debuggable false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+            consumerProguardFiles "consumer-rules.pro"
         }
     }
+
     compileOptions {
-        sourceCompatibility JavaVersion.VERSION_11
-        targetCompatibility JavaVersion.VERSION_11
+        sourceCompatibility JavaVersion.VERSION_17
+        targetCompatibility JavaVersion.VERSION_17
     }
+
+    publishing {
+        multipleVariants {
+            includeBuildTypeValues('release')
+        }
+    }
+
 }
 
 dependencies {
-    api 'androidx.appcompat:appcompat:1.6.0'
+    api libs.appcompatx
 }
 
 afterEvaluate {
     publishing {
         publications {
             release(MavenPublication) {
-                from components.release
-
                 groupId = 'com.github.damionx7'
                 artifactId = 'Zettel-Notes-Plugin-Api'
-                version = '1.0.5'
+                version = "${appVersion}"
+
+                afterEvaluate {
+                    from components.default
+                }
             }
         }
     }
