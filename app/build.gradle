@@ -48,7 +48,7 @@ android {
 }
 
 dependencies {
-    api libs.appcompatx
+    api "androidx.appcompat:appcompat:1.6.1"
 }
 
 afterEvaluate {
