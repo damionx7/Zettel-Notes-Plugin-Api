@@ -3,7 +3,7 @@ plugins {
     id 'maven-publish'
 }
 
-def appVersion = 8
+def appVersion = 9
 
 android {
     namespace "org.eu.thedoc.zettelnotes.interfaces"
