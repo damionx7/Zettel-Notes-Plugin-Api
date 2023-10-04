@@ -3,7 +3,9 @@ plugins {
     id 'maven-publish'
 }
 
-def appVersion = 9
+def appVersion = 10
+def buttonApiVersion = 9
+def scanApiVersion = 1
 
 android {
     namespace "org.eu.thedoc.zettelnotes.interfaces"
@@ -14,8 +16,12 @@ android {
         targetSdk 33
         versionCode appVersion
         versionName "${appVersion}"
-        resValue "string", "api_version", "\"${appVersion}\""
-        buildConfigField("String", "API_VERSION", "\"${appVersion}\"")
+        //button interface
+        resValue "string", "api_version", "\"${buttonApiVersion}\""
+        buildConfigField("String", "API_VERSION", "\"${buttonApiVersion}\"")
+        //scan interface
+        resValue "string", "scan_api_version", "\"${scanApiVersion}\""
+        buildConfigField("String", "SCAN_API_VERSION", "\"${scanApiVersion}\"")
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
