@@ -3,7 +3,7 @@ plugins {
     id 'maven-publish'
 }
 
-def appVersion = 10
+def appVersion = 11
 def buttonApiVersion = 9
 def scanApiVersion = 1
 

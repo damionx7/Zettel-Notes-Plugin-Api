@@ -1,6 +1,5 @@
 package org.eu.thedoc.zettelnotes.interfaces;
 
-import android.app.Activity;
 import android.content.Context;
 
 public abstract class ScanInterface {
