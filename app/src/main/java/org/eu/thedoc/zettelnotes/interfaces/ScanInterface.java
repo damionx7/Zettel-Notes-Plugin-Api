@@ -1,5 +1,8 @@
 package org.eu.thedoc.zettelnotes.interfaces;
 
+import android.app.Activity;
+import android.content.Context;
+
 public abstract class ScanInterface {
 
   public static final String API_VERSION = BuildConfig.SCAN_API_VERSION;
@@ -12,9 +15,9 @@ public abstract class ScanInterface {
 
   public interface Listener {
 
-    boolean onScanText(String repository, String fileName, String text);
+    boolean onScanText(Context context, String repository, String fileName, String text);
 
-    String onProcessText(String text);
+    String onProcessText(Context context, String text);
   }
 
 }
