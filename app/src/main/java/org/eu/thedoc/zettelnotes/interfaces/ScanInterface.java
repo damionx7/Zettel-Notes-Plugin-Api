@@ -14,7 +14,7 @@ public abstract class ScanInterface {
 
   public interface Listener {
 
-    boolean onScanText(Context context, String repository, String fileName, String text);
+    boolean onScanText(Context context, String category, String fileUri, String fileTitle, String text);
 
     String onProcessText(Context context, String text);
   }
