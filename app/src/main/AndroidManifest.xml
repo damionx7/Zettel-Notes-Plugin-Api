@@ -10,4 +10,10 @@
            android:value="@string/scan_api_version" />
     </application>
 
+    <queries>
+        <intent>
+            <action android:name="org.eu.thedoc.zettelnotes.broadcast.plugins.OPEN_URI" />
+        </intent>
+    </queries>
+
 </manifest>

@@ -3,7 +3,8 @@ plugins {
     id 'maven-publish'
 }
 
-def appVersion = 12
+def appVersion = 13
+
 def buttonApiVersion = 9
 def scanApiVersion = 2
 
@@ -30,6 +31,7 @@ android {
         debug {
             debuggable true
             minifyEnabled false
+            buildConfigField "String", "ZETTEL_PACKAGE_NAME", '"org.eu.thedoc.zettelnotes.debug"'
         }
         release {
             //disable proguard for plugin system to work
@@ -37,6 +39,7 @@ android {
             debuggable false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
             consumerProguardFiles "consumer-rules.pro"
+            buildConfigField "String", "ZETTEL_PACKAGE_NAME", '"org.eu.thedoc.zettelnotes"'
         }
     }
 
