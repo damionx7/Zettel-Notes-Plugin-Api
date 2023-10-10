@@ -22,12 +22,12 @@ public abstract class AbstractPluginBroadcastReceiver
     if (intent != null) {
       String action = intent.getAction();
       if (action != null && action.equals(INTENT_ACTION_PLUGIN_OPEN_URI)) {
-        openUri(intent);
+        openUri(context, intent);
       }
     }
   }
 
-  protected abstract void openUri(Intent intent);
+  protected abstract void openUri(Context context, Intent intent);
 
   public static class IntentBuilder {
 
