@@ -1,33 +1,16 @@
 package org.eu.thedoc.zettelnotes.broadcasts;
 
-import android.content.BroadcastReceiver;
 import android.content.ComponentName;
-import android.content.Context;
 import android.content.Intent;
-import android.util.Log;
 import org.eu.thedoc.zettelnotes.interfaces.BuildConfig;
 
-public abstract class AbstractPluginBroadcastReceiver
-    extends BroadcastReceiver {
+public class AbstractPluginReceiver {
 
   protected static final String EXTRAS_URI = "extras-uri";
   protected static final String EXTRAS_REPOSITORY = "extras-repository";
 
   //intent action to open file uri in repository from Zettel Notes
   private static final String INTENT_ACTION_PLUGIN_OPEN_URI = "org.eu.thedoc.zettelnotes.broadcast.plugins.OPEN_URI";
-
-  @Override
-  public void onReceive(Context context, Intent intent) {
-    Log.v("PluginBroadcastReceiver", "onReceive");
-    if (intent != null) {
-      String action = intent.getAction();
-      if (action != null && action.equals(INTENT_ACTION_PLUGIN_OPEN_URI)) {
-        openUri(context, intent);
-      }
-    }
-  }
-
-  protected abstract void openUri(Context context, Intent intent);
 
   public static class IntentBuilder {
 
