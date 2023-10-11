@@ -6,11 +6,21 @@ import org.eu.thedoc.zettelnotes.interfaces.BuildConfig;
 
 public class AbstractPluginReceiver {
 
-  protected static final String EXTRAS_URI = "extras-uri";
-  protected static final String EXTRAS_REPOSITORY = "extras-repository";
+  //note uri
+  public static final String EXTRAS_URI = "arg-uri";
+  //repository
+  public static final String EXTRAS_REPOSITORY = "arg-repository";
+  //start with edit mode
+  public static final String EXTRAS_EDIT = "arg-edit";
+  //line number in note
+  public static final String EXTRAS_LINE_INDEXES = "arg-line-indexes";
+  //replacement of the line
+  public static final String EXTRAS_REPLACEMENT = "arg-replacement-text";
 
-  //intent action to open file uri in repository from Zettel Notes
+  //intent action to open file uri
   private static final String INTENT_ACTION_PLUGIN_OPEN_URI = "org.eu.thedoc.zettelnotes.broadcast.plugins.OPEN_URI";
+  //intent action to open and replace specific line in file uri
+  private static final String INTENT_ACTION_PLUGIN_OPEN_AND_REPLACE_URI = "org.eu.thedoc.zettelnotes.broadcast.plugins.OPEN_AND_REPLACE_URI";
 
   public static class IntentBuilder {
 
@@ -36,6 +46,17 @@ public class AbstractPluginReceiver {
       return this;
     }
 
+    public IntentBuilder setActionOpenAndReplace(String text) {
+      intent.setAction(INTENT_ACTION_PLUGIN_OPEN_AND_REPLACE_URI);
+      intent.putExtra(EXTRAS_REPLACEMENT, text);
+      return this;
+    }
+
+    public IntentBuilder setLineIndexes(int[] indexes) {
+      intent.putExtra(EXTRAS_LINE_INDEXES, indexes);
+      return this;
+    }
+
     public IntentBuilder setUri(String uri) {
       intent.putExtra(EXTRAS_URI, uri);
       return this;
@@ -43,6 +64,11 @@ public class AbstractPluginReceiver {
 
     public IntentBuilder setRepository(String repository) {
       intent.putExtra(EXTRAS_REPOSITORY, repository);
+      return this;
+    }
+
+    public IntentBuilder setEdit(boolean edit) {
+      intent.putExtra(EXTRAS_EDIT, edit);
       return this;
     }
 
