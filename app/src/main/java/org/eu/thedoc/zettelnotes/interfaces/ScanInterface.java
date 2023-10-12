@@ -1,6 +1,7 @@
 package org.eu.thedoc.zettelnotes.interfaces;
 
 import android.content.Context;
+import java.util.List;
 
 public abstract class ScanInterface {
 
@@ -15,6 +16,8 @@ public abstract class ScanInterface {
   public interface Listener {
 
     boolean onScanText(Context context, String category, String fileUri, String fileTitle, String text);
+
+    void onDeleteUris(Context context, String category, List<String> fileUris);
 
     String onProcessText(Context context, String text);
   }
