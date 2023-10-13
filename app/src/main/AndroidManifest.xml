@@ -10,8 +10,4 @@
            android:value="@string/scan_api_version" />
     </application>
 
-    <queries>
-        <package android:name="@string/zettel_package_name" />
-        <package android:name="@string/zettel_package_name_debug" />
-    </queries>
 </manifest>
