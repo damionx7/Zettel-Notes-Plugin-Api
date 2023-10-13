@@ -5,10 +5,6 @@ import androidx.activity.result.ActivityResult;
 
 public abstract class ButtonInterface {
 
-  public static final String API_VERSION = BuildConfig.API_VERSION;
-  public static final String METADATA_API_STRING = "org.eu.thedoc.zettelnotes.interfaces.version";
-  public static final String QUERY_INTENT = "org.eu.thedoc.zettelnotes.intent.buttons";
-
   protected Callback mCallback;
 
   public abstract String getName();

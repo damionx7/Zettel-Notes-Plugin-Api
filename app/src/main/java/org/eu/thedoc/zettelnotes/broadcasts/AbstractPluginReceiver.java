@@ -17,9 +17,9 @@ public class AbstractPluginReceiver {
   public static final String EXTRAS_REPLACEMENT = "arg-replacement-text";
 
   //intent action to open file uri
-  private static final String INTENT_ACTION_PLUGIN_OPEN_URI = "org.eu.thedoc.zettelnotes.broadcast.plugins.OPEN_URI";
+  public static final String INTENT_ACTION_PLUGIN_OPEN_URI = "org.eu.thedoc.zettelnotes.broadcast.plugins.OPEN_URI";
   //intent action to open and replace specific line in file uri
-  private static final String INTENT_ACTION_PLUGIN_OPEN_AND_REPLACE_URI = "org.eu.thedoc.zettelnotes.broadcast.plugins.OPEN_AND_REPLACE_URI";
+  public static final String INTENT_ACTION_PLUGIN_OPEN_AND_REPLACE_URI = "org.eu.thedoc.zettelnotes.broadcast.plugins.OPEN_AND_REPLACE_URI";
 
   public static class IntentBuilder {
 

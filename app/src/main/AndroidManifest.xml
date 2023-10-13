@@ -3,10 +3,10 @@
 
     <application>
         <meta-data
-           android:name="org.eu.thedoc.zettelnotes.interfaces.version"
+           android:name="@string/plugin_button_metadata_api_string"
            android:value="@string/api_version" />
         <meta-data
-           android:name="org.eu.thedoc.zettelnotes.interfaces.scan.version"
+           android:name="@string/plugin_scan_metadata_api_string"
            android:value="@string/scan_api_version" />
     </application>
 

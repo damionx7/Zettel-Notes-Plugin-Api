@@ -6,7 +6,12 @@ plugins {
 def appVersion = 20
 
 def buttonApiVersion = 9
+def buttonQueryIntent = "org.eu.thedoc.zettelnotes.intent.buttons"
+def buttonMetadataApiVersionString = "org.eu.thedoc.zettelnotes.interfaces.version"
+
 def scanApiVersion = 3
+def scanQueryIntent = "org.eu.thedoc.zettelnotes.intent.scan"
+def scanMetadataApiVersionString = "org.eu.thedoc.zettelnotes.interfaces.scan.version"
 
 def zettelNotesPackageName = "org.eu.thedoc.zettelnotes"
 def zettelNotesPackageNameDebug = "org.eu.thedoc.zettelnotes.debug"
@@ -21,11 +26,19 @@ android {
         versionCode appVersion
         versionName "${appVersion}"
         //button interface
-        resValue "string", "api_version", "\"${buttonApiVersion}\""
-        buildConfigField("String", "API_VERSION", "\"${buttonApiVersion}\"")
+        resValue "string", "button_api_version", "\"${buttonApiVersion}\""
+        buildConfigField("String", "BUTTON_API_VERSION", "\"${buttonApiVersion}\"")
+        resValue "string", "plugin_button_query_intent", "\"${buttonQueryIntent}\""
+        buildConfigField("String", "PLUGIN_BUTTON_QUERY_INTENT", "\"${buttonQueryIntent}\"")
+        resValue "string", "plugin_button_metadata_api_string", "\"${buttonMetadataApiVersionString}\""
+        buildConfigField("String", "PLUGIN_BUTTON_METADATA_API_STRING", "\"${buttonMetadataApiVersionString}\"")
         //scan interface
         resValue "string", "scan_api_version", "\"${scanApiVersion}\""
         buildConfigField("String", "SCAN_API_VERSION", "\"${scanApiVersion}\"")
+        resValue "string", "plugin_scan_query_intent", "\"${scanQueryIntent}\""
+        buildConfigField("String", "PLUGIN_SCAN_QUERY_INTENT", "\"${scanQueryIntent}\"")
+        resValue "string", "plugin_scan_metadata_api_string", "\"${scanMetadataApiVersionString}\""
+        buildConfigField("String", "PLUGIN_SCAN_METADATA_API_STRING", "\"${scanMetadataApiVersionString}\"")
         //package names needed for broadcast receiver
         resValue "string", "zettel_package_name", "\"${zettelNotesPackageName}\""
         resValue "string", "zettel_package_name_debug", "\"${zettelNotesPackageNameDebug}\""
