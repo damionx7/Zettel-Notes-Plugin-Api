@@ -4,7 +4,7 @@
     <application>
         <meta-data
            android:name="@string/plugin_button_metadata_api_string"
-           android:value="@string/api_version" />
+           android:value="@string/button_api_version" />
         <meta-data
            android:name="@string/plugin_scan_metadata_api_string"
            android:value="@string/scan_api_version" />
