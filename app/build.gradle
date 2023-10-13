@@ -3,10 +3,13 @@ plugins {
     id 'maven-publish'
 }
 
-def appVersion = 19
+def appVersion = 20
 
 def buttonApiVersion = 9
 def scanApiVersion = 3
+
+def zettelNotesPackageName = "org.eu.thedoc.zettelnotes"
+def zettelNotesPackageNameDebug = "org.eu.thedoc.zettelnotes.debug"
 
 android {
     namespace "org.eu.thedoc.zettelnotes.interfaces"
@@ -24,9 +27,8 @@ android {
         resValue "string", "scan_api_version", "\"${scanApiVersion}\""
         buildConfigField("String", "SCAN_API_VERSION", "\"${scanApiVersion}\"")
         //package names needed for broadcast receiver
-        buildConfigField "String", "ZETTEL_PACKAGE_NAME", '"org.eu.thedoc.zettelnotes"'
-        buildConfigField "String", "ZETTEL_PACKAGE_NAME_DEBUG", '"org.eu.thedoc.zettelnotes.debug"'
-
+        resValue "string", "zettel_package_name", "\"${zettelNotesPackageName}\""
+        resValue "string", "zettel_package_name_debug", "\"${zettelNotesPackageNameDebug}\""
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
 
@@ -34,11 +36,13 @@ android {
         debug {
             debuggable true
             minifyEnabled false
+            buildConfigField "String", "ZETTEL_PACKAGE_NAME", "\"${zettelNotesPackageNameDebug}\""
         }
         release {
             //disable proguard for plugin system to work
             minifyEnabled false
             debuggable false
+            buildConfigField "String", "ZETTEL_PACKAGE_NAME", "\"${zettelNotesPackageName}\""
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
             consumerProguardFiles "consumer-rules.pro"
         }

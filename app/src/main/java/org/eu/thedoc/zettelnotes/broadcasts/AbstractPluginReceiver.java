@@ -1,6 +1,5 @@
 package org.eu.thedoc.zettelnotes.broadcasts;
 
-import android.content.ComponentName;
 import android.content.Intent;
 import org.eu.thedoc.zettelnotes.interfaces.BuildConfig;
 
@@ -28,6 +27,7 @@ public class AbstractPluginReceiver {
 
     private IntentBuilder() {
       intent = new Intent();
+      intent.setPackage(BuildConfig.ZETTEL_PACKAGE_NAME);
     }
 
     public static IntentBuilder getInstance() {
