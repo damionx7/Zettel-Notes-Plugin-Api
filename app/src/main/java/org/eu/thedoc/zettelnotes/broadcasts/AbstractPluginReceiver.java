@@ -39,6 +39,11 @@ public class AbstractPluginReceiver {
       return this;
     }
 
+    public IntentBuilder setDebug() {
+      intent.setPackage(BuildConfig.ZETTEL_PACKAGE_NAME_DEBUG);
+      return this;
+    }
+
     public IntentBuilder setActionOpenAndReplace(String text) {
       intent.setAction(INTENT_ACTION_PLUGIN_OPEN_AND_REPLACE_URI);
       intent.putExtra(EXTRAS_REPLACEMENT, text);
