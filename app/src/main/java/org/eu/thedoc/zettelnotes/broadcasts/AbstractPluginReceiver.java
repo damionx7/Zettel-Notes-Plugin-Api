@@ -24,21 +24,14 @@ public class AbstractPluginReceiver {
 
   public static class IntentBuilder {
 
-    private static final String CLASS_NAME = "org.eu.thedoc.zettelnotes.common.modules.BroadcastReceiver";
     private final Intent intent;
 
     private IntentBuilder() {
       intent = new Intent();
-      intent.setComponent(new ComponentName(BuildConfig.ZETTEL_PACKAGE_NAME, CLASS_NAME));
     }
 
     public static IntentBuilder getInstance() {
       return new IntentBuilder();
-    }
-
-    public IntentBuilder setDebug() {
-      intent.setComponent(new ComponentName(BuildConfig.ZETTEL_PACKAGE_NAME_DEBUG, CLASS_NAME));
-      return this;
     }
 
     public IntentBuilder setActionOpenUri() {

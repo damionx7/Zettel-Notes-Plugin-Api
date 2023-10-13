@@ -17,9 +17,9 @@ public abstract class ScanInterface {
 
     boolean onScanText(Context context, String category, String fileUri, String fileTitle, String text);
 
-    void onDeleteUris(Context context, String category, List<String> fileUris);
-
     String onProcessText(Context context, String text);
+
+    void onDeleteUris(Context context, String category, List<String> fileUris);
   }
 
 }
