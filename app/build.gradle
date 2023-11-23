@@ -5,7 +5,7 @@ plugins {
 
 def appVersion = 21
 
-def buttonApiVersion = 9
+def buttonApiVersion = 10
 def buttonQueryIntent = "org.eu.thedoc.zettelnotes.intent.buttons"
 def buttonMetadataApiVersionString = "org.eu.thedoc.zettelnotes.interfaces.version"
 

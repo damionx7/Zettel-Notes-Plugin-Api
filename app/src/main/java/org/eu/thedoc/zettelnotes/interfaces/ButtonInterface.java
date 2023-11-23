@@ -37,6 +37,8 @@ public abstract class ButtonInterface {
 
     void replaceTextSelected(String text);
 
+    String getCurrentLine();
+
     String getTextSelected(boolean returnAllIfEmpty);
   }
 
