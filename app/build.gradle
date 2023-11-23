@@ -3,7 +3,7 @@ plugins {
     id 'maven-publish'
 }
 
-def appVersion = 22
+def appVersion = 23
 
 def buttonApiVersion = 10
 def buttonQueryIntent = "org.eu.thedoc.zettelnotes.intent.buttons"
