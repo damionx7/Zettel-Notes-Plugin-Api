@@ -3,9 +3,9 @@ plugins {
     id 'maven-publish'
 }
 
-def appVersion = 23
+def appVersion = 24
 
-def buttonApiVersion = 10
+def buttonApiVersion = 11
 def buttonQueryIntent = "org.eu.thedoc.zettelnotes.intent.buttons"
 def buttonMetadataApiVersionString = "org.eu.thedoc.zettelnotes.interfaces.version"
 
@@ -18,11 +18,11 @@ def zettelNotesPackageNameDebug = "org.eu.thedoc.zettelnotes.debug"
 
 android {
     namespace "org.eu.thedoc.zettelnotes.interfaces"
-    compileSdk 33
+    compileSdk 34
 
     defaultConfig {
         minSdk 21
-        targetSdk 33
+        targetSdk 34
         versionCode appVersion
         versionName "${appVersion}"
         //button interface

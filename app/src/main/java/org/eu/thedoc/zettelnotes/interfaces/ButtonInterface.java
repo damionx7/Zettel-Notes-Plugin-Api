@@ -1,6 +1,7 @@
 package org.eu.thedoc.zettelnotes.interfaces;
 
 import android.content.Intent;
+import android.net.Uri;
 import android.util.Pair;
 import androidx.activity.result.ActivityResult;
 
@@ -39,18 +40,20 @@ public abstract class ButtonInterface {
     void replaceTextSelected(String text);
 
     /***
-     * @return Pair with 1st Integer as Line
+     * @return Pair with 1st Integer as line start index
      * and String as line content
      */
     Pair<Integer, String> getCurrentLine();
 
     /***
-     * Replaces text in line at line number
+     * Replaces text in line at line start index
      * with Text in Pair
      */
-    void replaceCurrentLine (Pair<Integer, String> pair);
+    void replaceCurrentLine(Pair<Integer, String> pair);
 
     String getTextSelected(boolean returnAllIfEmpty);
+
+    void insertUri(Uri uri);
   }
 
 }
