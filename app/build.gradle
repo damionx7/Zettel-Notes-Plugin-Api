@@ -3,7 +3,7 @@ plugins {
     id 'maven-publish'
 }
 
-def appVersion = 25
+def appVersion = 26
 
 def buttonApiVersion = 11
 def buttonQueryIntent = "org.eu.thedoc.zettelnotes.intent.buttons"
@@ -44,21 +44,9 @@ android {
         resValue "string", "zettel_package_name_debug", "\"${zettelNotesPackageNameDebug}\""
         buildConfigField "String", "ZETTEL_PACKAGE_NAME", "\"${zettelNotesPackageName}\""
         buildConfigField "String", "ZETTEL_PACKAGE_NAME_DEBUG", "\"${zettelNotesPackageNameDebug}\""
-        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
-    }
 
-    buildTypes {
-        debug {
-            debuggable true
-            minifyEnabled false
-        }
-        release {
-            //disable proguard for plugin system to work
-            minifyEnabled false
-            debuggable false
-            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
-            consumerProguardFiles "consumer-rules.pro"
-        }
+        consumerProguardFiles "consumer-rules.pro"
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
 
     compileOptions {
