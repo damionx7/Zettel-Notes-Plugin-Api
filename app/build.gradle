@@ -3,7 +3,7 @@ plugins {
     id 'maven-publish'
 }
 
-def appVersion = 26
+def appVersion = 27
 
 def buttonApiVersion = 11
 def buttonQueryIntent = "org.eu.thedoc.zettelnotes.intent.buttons"
@@ -18,7 +18,7 @@ def zettelNotesPackageNameDebug = "org.eu.thedoc.zettelnotes.debug"
 
 android {
     namespace "org.eu.thedoc.zettelnotes.interfaces"
-    compileSdk 34
+    compileSdk 35
 
     defaultConfig {
         minSdk 24
