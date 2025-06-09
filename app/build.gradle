@@ -3,7 +3,7 @@ plugins {
     id 'maven-publish'
 }
 
-def appVersion = 27
+def appVersion = 28
 
 def buttonApiVersion = 11
 def buttonQueryIntent = "org.eu.thedoc.zettelnotes.intent.buttons"
@@ -66,7 +66,7 @@ android {
 }
 
 dependencies {
-    api "androidx.appcompat:appcompat:1.7.0"
+    api "androidx.appcompat:appcompat:1.7.1"
 }
 
 afterEvaluate {
